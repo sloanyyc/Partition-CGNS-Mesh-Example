@@ -4,8 +4,8 @@
 #include <string>
 #include <vector>
 
-#include <cgnslib.h>
-#include <metis.h>
+#include "cgnslib.h"
+#include "metis.h"
 
 int main(int argc, char *argv[])
 {
@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
     int fileId, baseId = 1, zoneId = 1;
     cg_open(filename.c_str(), CG_MODE_READ, &fileId);
 
-    cgsize_t sizes[2], one = 1;
+	cgsize_t sizes[20] = { 0 }, one = 1;
 
     //- Read the zone info
     cg_zone_read(fileId, baseId, zoneId, name, sizes);
